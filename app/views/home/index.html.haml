@@ -1,0 +1,88 @@
+%header.cd-header
+  %h1 Contents Filters
+  .cd-nugget-info
+    %a{:href => "https://codyhouse.co/gem/content-filter"}
+%main.cd-main-content
+  .cd-tab-filter-wrapper
+    .cd-tab-filter
+      %ul.cd-filters
+        %li.placeholder
+          %a{"data-type" => "all", :href => "#0"} All
+        %li.filter
+          %a.selected{"data-type" => "all", :href => "#0"} All
+        %li.filter{"data-filter" => ".color-1"}
+          %a{"data-type" => "color-1", :href => "#0"} Color 1
+        %li.filter{"data-filter" => ".color-2"}
+          %a{"data-type" => "color-2", :href => "#0"} Color 2
+  %section.cd-gallery
+    -@horis.each do |hori|
+      .panel.panel-default
+        .panel-body
+          %h2= hori.title
+          %p.user publicado por %=hori.user.email;
+    %ul
+      %li.gap
+      %li.gap
+      %li.gap
+    .cd-fail-message No se encontro resultados
+  .cd-filter
+    %form
+      .container-fluid
+        .row
+          .cd-filter-block
+            %h4 Buscar
+            .cd-filter-content
+              %input{:placeholder => "Try color-1...", :type => "search"}
+        .row
+          .col-sm-3.col-md-9{:style => "border:1px solid #cecece;"}
+            .cd-filter-block
+              %h4 Perfil
+              %ul.cd-filter-content.cd-filters.list
+                .cd-filter-block
+                  %span.label.label-default Fechas
+                  %br/
+                  .input-group.input-daterange
+                    %input.datepicker{:type => "text"}
+                  .input-group-addon a
+                  %input.datepicker{:type => "text"}
+                  %br/                
+                  %select#selectThis.filter{:name => "Seleccionar"}
+                    %option{:value => ""} Valor Minimo
+                    %option{:value => ".option1"} 50.000
+                    %option{:value => ".option1"} 100.000
+                    %option{:value => ".option1"} 150.000
+                  %br/
+                  %br/
+                  %select#selectThis.filter{:name => "Seleccionar"}
+                    %option{:value => ""} Valor Maximo
+                    %option{:value => ".option1"} 50.000
+                    %option{:value => ".option1"} 100.000
+                    %option{:value => ".option1"} 150.000
+                  %br/
+                  %br/
+          
+                  
+
+    
+          .col-sm-9.col-md-6
+            .cd-filter-block
+              %h4 Perfil
+              %ul.cd-filter-content.cd-filters.list
+                .cd-filter-block
+                  %select#selectThis.filter{:name => "Seleccionar"}
+                    %option{:value => ""} Valor Minimo
+                    %option{:value => ".option1"} 50.000
+                    %option{:value => ".option1"} 100.000
+                    %option{:value => ".option1"} 150.000
+                  %br/
+                  %br/
+                  %select#selectThis.filter{:name => "Seleccionar"}
+                    %option{:value => ""} Valor Maximo
+                    %option{:value => ".option1"} 50.000
+                    %option{:value => ".option1"} 100.000
+                    %option{:value => ".option1"} 150.000
+                                
+    %a.cd-close{:href => "#0"} Cerrar
+  
+  
+  %a.cd-filter-trigger{:href => "#0"}Filtros            
